@@ -1,0 +1,44 @@
+﻿<div class="bg-light border m-2 col-5" @onclick="(args)=>LastSelectedRecipe(args, Recipe.Name)" >
+                <h4 class="text-secondary">Recipe - @Recipe.Id</h4>
+                <input type="checkbox" @onchange="FavouriteUpdated"/> Add to Favourite  <br /><br />
+    Name - @Recipe.Name<br />
+    <p> RF from Parent @FirstFragment @SecondFragment</p>
+    
+    Show More Details: <input type="checkbox" @bind-value="Recipe.IsActive" checked="@(Recipe.IsActive?"checked":null)"><br />
+    @if (Recipe.IsActive)
+                {
+        <p>Recipe Type - @Recipe.RecipeType</p>
+        <p>Cook Time - @Recipe.TimeToCook<br /></p>
+        <p>Ingredients - @Recipe.Ingredients<br /></p>
+        <p>Instructions - @Recipe.Instructions<br /></p>
+                    
+                }
+    <_DeleteEditButton IsActive="@Recipe.IsActive">
+    </_DeleteEditButton>
+</div>
+
+@code {
+    [Parameter]
+    public Recipe Recipe { get; set; }
+
+    [Parameter] 
+    public EventCallback<bool> OnFavouriteUpdated { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnLastSelectedRecipeChange { get; set; }
+
+    [Parameter]
+    public RenderFragment FirstFragment { get; set; }
+    [Parameter]
+    public RenderFragment SecondFragment { get; set; }
+
+    private async Task FavouriteUpdated(ChangeEventArgs e)
+    {
+        await OnFavouriteUpdated.InvokeAsync((bool)e.Value);
+    }
+
+    private async Task LastSelectedRecipe(MouseEventArgs e, string name)
+    {
+        await OnLastSelectedRecipeChange.InvokeAsync(name);
+    }
+}

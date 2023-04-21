@@ -1,0 +1,14 @@
+D:\Documents\School\Semester 4\PROG1442\Final Project\RecipeApp\RecipeApp_Common\bin\Debug\net6.0\RecipeApp_Common.deps.json
+D:\Documents\School\Semester 4\PROG1442\Final Project\RecipeApp\RecipeApp_Common\bin\Debug\net6.0\RecipeApp_Common.runtimeconfig.json
+D:\Documents\School\Semester 4\PROG1442\Final Project\RecipeApp\RecipeApp_Common\bin\Debug\net6.0\RecipeApp_Common.dll
+D:\Documents\School\Semester 4\PROG1442\Final Project\RecipeApp\RecipeApp_Common\bin\Debug\net6.0\RecipeApp_Common.pdb
+D:\Documents\School\Semester 4\PROG1442\Final Project\RecipeApp\RecipeApp_Common\obj\Debug\net6.0\RecipeApp_Common.csproj.AssemblyReference.cache
+D:\Documents\School\Semester 4\PROG1442\Final Project\RecipeApp\RecipeApp_Common\obj\Debug\net6.0\RecipeApp_Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\School\Semester 4\PROG1442\Final Project\RecipeApp\RecipeApp_Common\obj\Debug\net6.0\RecipeApp_Common.AssemblyInfoInputs.cache
+D:\Documents\School\Semester 4\PROG1442\Final Project\RecipeApp\RecipeApp_Common\obj\Debug\net6.0\RecipeApp_Common.AssemblyInfo.cs
+D:\Documents\School\Semester 4\PROG1442\Final Project\RecipeApp\RecipeApp_Common\obj\Debug\net6.0\RecipeApp_Common.csproj.CoreCompileInputs.cache
+D:\Documents\School\Semester 4\PROG1442\Final Project\RecipeApp\RecipeApp_Common\obj\Debug\net6.0\RecipeApp_Common.dll
+D:\Documents\School\Semester 4\PROG1442\Final Project\RecipeApp\RecipeApp_Common\obj\Debug\net6.0\refint\RecipeApp_Common.dll
+D:\Documents\School\Semester 4\PROG1442\Final Project\RecipeApp\RecipeApp_Common\obj\Debug\net6.0\RecipeApp_Common.pdb
+D:\Documents\School\Semester 4\PROG1442\Final Project\RecipeApp\RecipeApp_Common\obj\Debug\net6.0\RecipeApp_Common.genruntimeconfig.cache
+D:\Documents\School\Semester 4\PROG1442\Final Project\RecipeApp\RecipeApp_Common\obj\Debug\net6.0\ref\RecipeApp_Common.dll

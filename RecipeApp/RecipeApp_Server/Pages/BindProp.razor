@@ -1,0 +1,104 @@
+﻿@page "/bindprop"
+<h2 class="text-success">Individual Recipe</h2>
+<div class="row">
+    <div class="col-6 border p-3">
+        <h3 class="text-primary">Recipe</h3><hr />
+        Name: @recipe.Name<br />
+        Type: @recipe.RecipeType<br />
+        Type: @recipe.TimeToCook<br />
+        @foreach (var r in Recipes)
+        {
+            <text>@r.Name</text><br />
+        }
+    </div>
+
+    <div class="col-6 border p-3">
+        <h3 class="text-primary">Product Changing</h3><hr />
+        <div>
+            Cook time:<input type="number" @bind-value="@recipe.TimeToCook" @bind-value:event="oninput" />
+        </div>
+    </div>
+
+    <div class="col-12 pt-4">
+        <h2 class="text-success">Recipe Table</h2>
+        <table class="table table-striped">
+            <tbody>
+                @foreach(var r in Recipes)
+                {
+                    <tr>
+                        <td>
+                            <input type="text" @bind-value="r.Name" @bind-value:event="oninput"/>
+                        </td>
+                        <td>
+                            <input type="text" @bind-value="r.Ingredients" @bind-value:event="oninput" />
+                        </td>
+                        <td>
+                            <input type="text" @bind-value="r.TimeToCook" @bind-value:event="oninput" />
+                        </td>
+                        <td>
+                            <input type="text" @bind-value="r.RecipeType" @bind-value:event="oninput" />
+                        </td>
+                        <td>
+                            <input type="text" @bind-value="r.Instructions" @bind-value:event="oninput" />
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <h2>Recipe summary</h2>
+        @foreach (var r in Recipes)
+        {
+            <p>@r.Name&nbsp; @if (r.RecipeType == "Sandwhich")
+                {
+                    @r.RecipeType
+                }
+            </p>
+        }
+    </div>
+</div>
+
+
+
+
+
+@code {
+    Recipe recipe = new()
+        {
+            Id = 1,
+            Name = "Grilled Cheese",
+            Ingredients = "Bread, cheese, butter",
+            TimeToCook = 10,
+            RecipeType = "Sandwhich",
+            Instructions = "Button one side of each slice of bread, " +
+                "heat pan on medium heat, put one slice down and add cheese, put other slice down, cover, flip when bottom is golden brown and crispy"
+
+        };
+
+    List<Recipe> Recipes = new();
+
+    protected override void OnInitialized()
+    {
+        Recipes.Add(new()
+        {
+                Id = 1,
+                Name = "Grilled Cheese",
+                Ingredients = "Bread, cheese, butter",
+                TimeToCook = 10,
+                RecipeType = "Sandwhich",
+                Instructions = "Button one side of each slice of bread, " +
+                    "heat pan on medium heat, put one slice down and add cheese, put other slice down, cover, flip when bottom is golden brown and crispy"
+
+        });
+        Recipes.Add(new()
+            {
+                Id = 2,
+                Name = "Perfect Bacon",
+                Ingredients = "Bacon, water",
+                TimeToCook = 15,
+                RecipeType = "Breakfast",
+                Instructions = "Add bacon to cold pan, add water to cover bottom of pan but not bacon" +
+                        "cook on medium high heat until water is gone, turn down heat until bacon is cooked as desired, flip as necessary"
+
+            });
+    }
+}

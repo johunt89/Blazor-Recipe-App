@@ -1,0 +1,66 @@
+﻿@page "/recipecard"
+
+<h2 class="text-primary">RecipeCards</h2>
+<p>Total Favourites : @FavouriteCount</p>
+<p>Last Selected Recipe: @LastSelectedRecipe</p>
+
+<div class="border p-2 mt-2" style="background-color:azure">
+    <div class="row">
+        @foreach(var r in Recipes)
+        {
+            <_IndividualRecipe Recipe="r" OnFavouriteUpdated="FavouriteCountUpdate"
+            OnLastSelectedRecipeChange ="SelectedRecipeUpdate">
+            <FirstFragment>#1</FirstFragment>
+            <SecondFragment>#2</SecondFragment>
+            </_IndividualRecipe>
+        }    
+    </div>
+</div>
+
+@code {
+    List<Recipe> Recipes = new();
+    private int FavouriteCount { get; set; } = 0;
+    private string LastSelectedRecipe { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Recipes.Add(new()
+            {
+                Id = 1,
+                Name = "Grilled Cheese",
+                Ingredients = "Bread, cheese, butter",
+                TimeToCook = 10,
+                RecipeType = "Sandwhich",
+                Instructions = "Button one side of each slice of bread, " +
+                        "heat pan on medium heat, put one slice down and add cheese, put other slice down, cover, flip when bottom is golden brown and crispy"
+
+            });
+        Recipes.Add(new()
+            {
+                Id = 2,
+                Name = "Perfect Bacon",
+                Ingredients = "Bacon, water",
+                TimeToCook = 15,
+                RecipeType = "Breakfast",
+                Instructions = "Add bacon to cold pan, add water to cover bottom of pan but not bacon" +
+                            "cook on medium high heat until water is gone, turn down heat until bacon is cooked as desired, flip as necessary"
+
+            });
+    }
+
+    protected void FavouriteCountUpdate(bool isSelected)
+    {
+        if (isSelected)
+        {
+            FavouriteCount++;
+        }
+        else
+        {
+            FavouriteCount--;
+        }
+    }
+    protected void SelectedRecipeUpdate(string recipeName)
+    {
+        LastSelectedRecipe = recipeName;
+    }
+}
